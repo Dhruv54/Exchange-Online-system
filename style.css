@@ -1,0 +1,57 @@
+h1 {
+    color: blue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-attachment: scroll;
+    background-color: lightcyan;
+    border-radius: 0.2cm;
+    font-style: inherit;
+    border-style: none;
+}
+
+h2 {
+    color: blue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-attachment: scroll;
+    background-color: lightcyan;
+    border-radius: 0.1cm;
+    font-style: inherit;
+    border-style: none;
+}
+
+body {
+    background-color: cadetblue;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-color: lavenderblush;
+    margin: 20%;
+    border-style: none;
+    box-sizing: border-box;
+}
+
+.pay {
+    color: rgb(20, 86, 172);
+    background-color: rgba(118, 223, 20, 0.932);
+    border-style: none;
+    border-spacing: inherit;
+    font-family: fantasy;
+    border-radius: 0.2cm;
+    font-size: medium;
+}
+
+.pay:hover {
+    color: powderblue;
+}
+
+.gender {
+    background-color: powderblue;
+    font-family: serif;
+    border-style: none;
+    border-radius: 0.2cm;
+}
+
+.border {
+    border-style: none;
+    border-radius: 0.1cm;
+    background-color: powderblue;
+    border-collapse: collapse;
+    border-spacing: 5px;
+}
