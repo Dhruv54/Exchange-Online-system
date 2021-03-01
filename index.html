@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form action="">
+        <h1>PAYMENT PAGE</h1>
+        <h2>Contact Info</h2>
+        <p>requred fields by *</p>
+        <p>Name:* <input class="border" type="text" size="100%" name="name" placeholder="--Enter Name--" id=" " required></p>
+        <fieldset class="gender">
+            <legend>Gender :*</legend>
+            <p>
+                MALE <input type="radio" name="gender" id="MALE" required> FEMALE <input type="radio" name="gender" id="FEMALE" required>
+            </p>
+        </fieldset>
+        <p>ADDRESS: <textarea class="border" size="100%" name="address" id="address" cols="100" rows="1"></textarea></p>
+        <p>Email :* <input class="border" size="100%" type="email" name="email" id="email" required></p>
+        <p>Pincode :* <input class="border" size="100%" type="number" name="pincode" id="pincode" required></p>
+        <hr>
+        <h2>Payment information</h2>
+        <p>Card type:*
+            <select class="border" name="card_type" id="card_type" required>
+                <option value="">--select a card type--</option>
+                <option value="visa">visa</option>
+                <option value="rupay">rupay</option>
+            </select>
+        </p>
+        <p>
+            card number :* <input class="border" size="100%" type="number" name="number " id="number" required>
+        </p>
+        <p>
+            expiration date :* <input class="border" size="100%" type="date" name="exp_date" id="exp_date" required>
+        </p>
+        <p>
+            CVV :* <input class="border" size="30%" type="password" name="cvv" id="cvv" required>
+        </p>
+        <input class="pay" type="submit" value="PAYNOW">
+    </form>
+</body>
+
+</html>
