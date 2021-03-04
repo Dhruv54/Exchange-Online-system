@@ -4,45 +4,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Form</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Home page</title>
+    <style>
+        body {
+            background-color: cornflowerblue;
+            font-family: sans-serif;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: cornflowerblue;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        li a:hover {
+            background-color: black;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: cornflowerblue;
+            min-width: 160px;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: black;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .maindiv {
+            display: flex;
+            width: 200%;
+            height: 500px;
+            border: cornflowerblue;
+            align-content: space-between;
+        }
+        
+        div.gallery {
+            width: 175px;
+            height: 175px;
+            background-color: cornflowerblue;
+            border: 2px solid cornflowerblue;
+            text-align: center;
+            font-size: 2em;
+            color: white;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+        
+        div.gallery:hover {
+            border: 5px solid cornflowerblue;
+        }
+        
+        div.gallery img {
+            width: 100%;
+            height: auto;
+        }
+        
+        div.desc {
+            padding: 15px;
+            text-align: left;
+            font-size: medium;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        input[type=text] {
+            width: 130px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            transition: width 0.4s ease-in-out;
+        }
+        
+        input[type=text]:focus {
+            width: 50%;
+            background-color: whitesmoke;
+            border-radius: 2px;
+            border-color: whitesmoke;
+        }
+    </style>
 </head>
 
 <body>
-    <form action="">
-        <h1>PAYMENT PAGE</h1>
-        <h2>Contact Info</h2>
-        <p>requred fields by *</p>
-        <p>Name:* <input class="border" type="text" size="100%" name="name" placeholder="--Enter Name--" id=" " required></p>
-        <fieldset class="gender">
-            <legend>Gender :*</legend>
-            <p>
-                MALE <input type="radio" name="gender" id="MALE" required> FEMALE <input type="radio" name="gender" id="FEMALE" required>
-            </p>
-        </fieldset>
-        <p>ADDRESS: <textarea class="border" size="100%" name="address" id="address" cols="100" rows="1"></textarea></p>
-        <p>Email :* <input class="border" size="100%" type="email" name="email" id="email" required></p>
-        <p>Pincode :* <input class="border" size="100%" type="number" name="pincode" id="pincode" required></p>
-        <hr>
-        <h2>Payment information</h2>
-        <p>Card type:*
-            <select class="border" name="card_type" id="card_type" required>
-                <option value="">--select a card type--</option>
-                <option value="visa">visa</option>
-                <option value="rupay">rupay</option>
-            </select>
-        </p>
-        <p>
-            card number :* <input class="border" size="100%" type="number" name="number " id="number" required>
-        </p>
-        <p>
-            expiration date :* <input class="border" size="100%" type="date" name="exp_date" id="exp_date" required>
-        </p>
-        <p>
-            CVV :* <input class="border" size="30%" type="password" name="cvv" id="cvv" required>
-        </p>
-        <input class="pay" type="submit" value="PAYNOW">
+    <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="login.html">LOGIN</a></li>
+        <li><a href="registration.html">REGISTRATION</a></li>
+        <li style="float:right"><a href=" search.html ">SEARCH</a></li>
+    </ul>
+    <ul>
+        <li><a href="mobile.html">Mobile</a></li>
+        <li><a href="car.html">Car</a></li>
+        <li><a href="bike.html">Bike</a></li>
+        <li><a href="laptop.html">Laptop</a></li>
+        <li style="float:right" class="dropdown">
+            <a class="dropbtn">All Category</a>
+            <div class="dropdown-content">
+                <a style="color: white;" href="#">Mobile</a>
+                <a style="color: white;" href="#">Car</a>
+                <a style="color: white;" href="#">Bike</a>
+                <a style="color: white;" href="#">Laptop</a>
+            </div>
+        </li>
+    </ul>
+    <div class="maindiv">
+        <div class="gallery">
+            <a href="1st.jpeg" target="_blank">
+                <img src="1st.jpeg">
+            </a>
+            <div class="desc">
+                Lorem ipsum dolor sit amet.
+            </div>
+        </div>
+        <div class="gallery">
+            <a href="2st.jpeg" target="_blank">
+                <img src="2nd.jpeg">
+            </a>
+            <div class="desc">Lorem ipsum dolor, sit amet consectetur.</div>
+        </div>
+        <div class="gallery">
+            <a href="3st.jpeg" target="_blank">
+                <img src="3rd.jpeg">
+            </a>
+            <div class="desc">Lorem ipsum dolor, sit amet consectetur.</div>
+        </div>
+        <div class="gallery">
+            <a href="4st.jpeg" target="_blank">
+                <img src="4th.jpeg">
+            </a>
+            <div class="desc">Lorem ipsum dolor, sit amet consectetur.</div>
+        </div>
+        <div class="gallery">
+            <a href="5th.jpeg" target="_blank">
+                <img src="5th.jpeg">
+            </a>
+            <div class="desc">Lorem ipsum dolor, sit amet consectetur.</div>
+        </div>
+        <div class="gallery">
+            <a href="6th.jpeg" target="_blank">
+                <img src="6th.jpeg">
+            </a>
+            <div class="desc">Lorem ipsum dolor, sit amet consectetur.</div>
+        </div>
+        <div class="gallery">
+            <a href="7th.jpeg" target="_blank">
+                <img src="7th.jpeg">
+            </a>
+            <div class="desc">Lorem ipsum dolor, sit amet consectetur.</div>
+        </div>
+        <div class="gallery">
+            <a href="8th.jpeg" target="_blank">
+                <img src="8th.jpeg">
+            </a>
+            <div class="desc">Lorem ipsum dolor, sit amet consectetur.</div>
+        </div>
+    </div>
+
+    <form>
+        <input type="text" name="search" placeholder="Search..">
     </form>
+
 </body>
 
 </html>
