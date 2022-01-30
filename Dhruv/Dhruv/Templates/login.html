@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN page</title>
+    <style>
+        body {
+            margin-top: 100px;
+            padding: 10;
+            font-family: sans-serif;
+            background: linear-gradient(to right, #2736b9, #1aa8e0)
+        }
+        
+        .box {
+            width: 500px;
+            padding: 40px;
+            background: powderblue;
+            text-align: center;
+            box-sizing: border-box;
+            border-radius: 0.1cm;
+            margin: auto;
+        }
+        
+        .box input[type="text"],
+        .box input[type="password"] {
+            border: 0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #0c5c91;
+            padding: 10px 10px;
+            width: 250px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s
+        }
+        
+        .box h1 {
+            color: royalblue;
+            text-transform: uppercase;
+            font-weight: 500
+        }
+        
+        .box input[type="text"]:focus,
+        .box input[type="password"]:focus {
+            width: 300px;
+            border-color: #2ecc71
+        }
+        
+        .box input[type="submit"] {
+            border: 0;
+            font-size: medium;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid;
+            border-color: royalblue;
+            padding: 14px 40px;
+            outline: none;
+            color: darkcyan;
+            border-radius: 24px;
+            transition: 0.25s;
+            cursor: pointer
+        }
+        
+        .box input[type="submit"]:hover {
+            background: lightskyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="box" action="login" method="POST">
+        {% csrf_token %}
+        <h1>Login</h1>
+        <p class="text"> Please enter your username and password!!!</p>
+        <input type="text" name="username" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <input type="submit" value="Login">
+    </form>
+    <div>
+        {% for message in messages %}
+        <h3>{{message}}</h3>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+            font-family: sans-serif;
+            font-size: 20px;
+        }
+        
+        .maindiv {
+            padding: 10px;
+            border-radius: 2px;
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: rgb(93, 124, 219);
+            border-radius: 2px;
+        }
+        
+        li {
+            float: left;
+        }
+        
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        
+        li a:hover {
+            background-color: royalblue;
+            border-radius: 2px;
+        }
+        
+        .dropbtn {
+            background-color: rgb(93, 124, 219);
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgb(93, 124, 219);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: royalblue;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        .dropdown:hover .dropbtn {
+            background-color: royalblue;
+        }
+        
+        div.maindiv {
+            margin: 5px;
+            border: 1px solid #ccc;
+            float: left;
+            width: 20%;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 25px;
+        }
+        
+        div.maindiv:hover {
+            border: 1px solid rgb(93, 124, 219);
+        }
+        
+        div.maindiv img {
+            width: 100%;
+            height: auto;
+        }
+        
+        div.desc {
+            padding: 10px 20px;
+            text-align: center;
+        }
+        
+        img {
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul>
+        <li><a href="home.html">HOME</a></li>
+
+
+        {% if user.is_authenticated %}
+        <li>Hello,{{user.first_name}}</li>
+        <li><a href="accounts/logout">LOGOUT</a></li>
+        {% else %}
+
+        <li><a href="accounts/login">LOGIN</a></li>
+        <li><a href="accounts/register">REGISTER</a></li>
+        {% endif %}
+        <li><a href="accounts/sell_form">SELL</a></li>
+
+        <li style="float:right"><a href=" search.html ">SEARCH</a></li>
+    </ul>
+    <ul>
+        <li><a href="mobile.html">Mobile</a></li>
+        <li><a href="car.html">Car</a></li>
+        <li><a href="bike.html">Bike</a></li>
+        <li><a href="laptop.html">Laptop</a></li>
+
+    </ul>
+    <div class="dropdown" style="float:right">
+        <button class="dropbtn">All Category</button>
+        <div class="dropdown-content">
+            <a style="color: white;" href="#">Mobile</a>
+            <a style="color: white;" href="#">Car</a>
+            <a style="color: white;" href="#">Bike</a>
+            <a style="color: white;" href="#">Laptop</a>
+        </div>
+    </div>
+    {% for dest in dests %}
+    <div class="maindiv" style="float: left;">
+        <img src="{{dest.img.url}}" width="300" height="200"><br> {% if dest.offer %}
+        <div class="desc"><a href="#">special offer</a> {% endif %}<br>
+            <div class="desc">Price: ${{dest.price}}<br> {{dest.desc}}
+                <br> {{dest.name}}
+                <br></div>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+
+</html>

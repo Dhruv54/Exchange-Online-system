@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sell_form</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+            font-family: sans-serif;
+            font-size: 20px;
+            padding: 20px 50px 20px;
+        }
+        
+        .nav {
+            background-color: lightsteelblue;
+            padding: 20px;
+            border-radius: 2px;
+        }
+        
+        .form {
+            background-color: whitesmoke;
+            padding: 10px 10px 10px;
+        }
+        
+        input {
+            background-color: whitesmoke;
+            display: block;
+            padding: 5px;
+            border-radius: 5px;
+            border-style: solid;
+        }
+        
+        textarea {
+            background-color: whitesmoke;
+            display: block;
+            padding: 5px;
+            border-radius: 5px;
+            border-style: solid;
+        }
+        
+        .submit {
+            background-color: cornflowerblue;
+            font-family: sans-serif;
+            font-size: 20px;
+            padding: 10px;
+            color: whitesmoke;
+        }
+        
+        .submit:hover {
+            background-color: lightblue;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav" style="color:rgb(51, 63, 61);">
+        Post Your Ads
+    </div>
+    <form class="form" action="">
+        <h3>INCLUDE SOME DETAILS</h3>
+        Brand* <input type="text" required>
+        <hr><br> Ad title* <input type="text" name="ad" value="">
+        <hr> <br> Description* <br>
+        <textarea name="description" id="" cols="30" rows="10"></textarea>
+        <hr> <br>
+        <h3>SET PRICE</h3>
+        Price* <input type="text" name="price" value="">
+        <hr> <br>
+        <h4>UPLOAD UP TO 5 PHOTOS</h4>
+        <h3>LOCATION</h3>
+        State* <input type="text" name="state" value="">
+        <br>
+        <hr><br>
+        <input class="submit" type="button" value="POSTNOW">
+    </form>
+
+    </div>
+
+</body>
+
+</html>

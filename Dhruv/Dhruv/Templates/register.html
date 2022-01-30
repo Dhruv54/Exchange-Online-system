@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin-top: 100px;
+            padding: 10;
+            font-family: sans-serif;
+            background: linear-gradient(to right, #3646d8, #1aa8e0);
+            box-sizing: border-box;
+        }
+        
+        h2 {
+            padding: 20px;
+            text-align: center;
+            font-size: 30px;
+            color: whitesmoke;
+        }
+        
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+        
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0px 500px 0px;
+        }
+        
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+        
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 50px;
+            margin: 0px 200px 0px;
+        }
+        
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+        
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>REGISTRATION FORM</h2>
+    <div class="container">
+        <form action="register" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">First Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="first_name" placeholder="Your name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="lname">Last Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="last_name" placeholder="Your last name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="uname">User Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="username" placeholder="Your User name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">Email</label>
+                </div>
+                <div class="col-75">
+                    <input type="email" name="email" placeholder="Your email..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="email">Password</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" name="password1" placeholder="Your password..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="password">Confirmation password</label>
+                </div>
+                <div class="col-75">
+                    <input type="password" name="password2" placeholder="confirm your password..">
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Submit">
+            </div>
+    </div>
+
+    </form>
+    </div>
+
+    <div>
+        {% for message in messages %}
+        <h3>{{messages}}</h3>
+        {% endfor %}
+    </div>
+
+</body>
+
+</html>
