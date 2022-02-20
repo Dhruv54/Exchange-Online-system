@@ -1,8 +1,8 @@
-# Eos.com
+# Exchange Online System
 
 # Getting Started
 
-First clone the repository from Github and switch to the new directory:
+How you clone the repository from Github and switch to the new directory:
 
     $ git clone git@github.com/USERNAME/{{ project_name }}.git
     $ cd {{ project_name }}
